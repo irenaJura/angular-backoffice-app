@@ -19,15 +19,15 @@ export class ProductService {
     return this.http.get(`${baseUrl}/products`);
   }
 
-  getProduct(storeId: number, productId: number): Observable<any> {
+  getProduct(productId: number): Observable<any> {
     return this.http.get(`${baseUrl}/products/${productId}`);
   }
 
-  addProduct(storeId: number, product: Product): Observable<any> {
+  addProduct(product: Product): Observable<any> {
     return this.http.post(`${baseUrl}/products`, product);
   }
 
-  deleteProduct(storeId: number, productId: number): Observable<any> {
+  deleteProduct(productId: number): Observable<any> {
     return this.http.delete(`${baseUrl}/products/${productId}`);
   }
 }

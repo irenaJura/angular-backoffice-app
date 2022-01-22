@@ -1,6 +1,6 @@
 <h1>{{title}}</h1>
 
-<mat-grid-list cols="3" rowHeight="1:2" gutterSize="40px" *ngIf="products" [cols]="breakpoint"
+<mat-grid-list cols="3" rowHeight="1:1.5" gutterSize="40px" *ngIf="products" [cols]="breakpoint"
     (window:resize)="onResize($event)">
     <mat-grid-tile *ngFor="let product of products; let i = index">
         <mat-card>
@@ -22,3 +22,9 @@
         </mat-card>
     </mat-grid-tile>
 </mat-grid-list>
+
+<div class="button-container">
+    <button mat-fab color="accent" routerLink="/add" matTooltip="Add new product" aria-label="Add new product">
+        <mat-icon>add_circle_outline</mat-icon>
+    </button>
+</div>

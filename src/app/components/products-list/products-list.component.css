@@ -12,4 +12,10 @@ mat-grid-list {
 mat-grid-tile {
     background: rgb(243, 240, 240);
     border: 1px solid grey;
-  }
+}
+
+.button-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
