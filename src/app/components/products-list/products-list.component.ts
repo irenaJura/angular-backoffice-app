@@ -12,6 +12,8 @@ export class ProductsListComponent implements OnInit {
   products: Product[] = [];
   title = '';
   breakpoint = 1;
+  visible = false;
+  visibleIndex = -1;
 
   constructor(private productService: ProductService) { }
 
@@ -44,6 +46,14 @@ export class ProductsListComponent implements OnInit {
           console.log(error);
         }
       )
+  }
+
+  toggleReviews(id: number) {
+    if (this.visibleIndex === id) {
+      this.visibleIndex = -1;
+    } else {
+      this.visibleIndex = id;
+    }
   }
 
   onResize(event: any) {
