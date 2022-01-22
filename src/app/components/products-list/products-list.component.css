@@ -19,8 +19,9 @@ mat-card {
 
 .button-container {
     position: fixed;
-    top: 30px;
-    left: 30px;
+    top: 10px;
+    left: 10px;
+    z-index: 9999999;
 }
 
 .delete-btn {

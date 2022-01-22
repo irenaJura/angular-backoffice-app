@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-product.component.css']
 })
 export class AddProductComponent implements OnInit {
+  title = "Add a new product";
   submitted = false;
 
   constructor(

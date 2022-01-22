@@ -1,13 +1,8 @@
-<h1>{{title}}</h1>
+<app-navbar></app-navbar>
 
+<h1 *ngIf="title">{{title}}</h1>
 
-<div class="button-container">
-    <button mat-fab color="accent" routerLink="/add" matTooltip="Add new product" aria-label="Add new product">
-        <mat-icon>add_circle_outline</mat-icon>
-    </button>
-</div>
-
-<div class="container">
+<div class="container" *ngIf="products">
     <mat-card *ngFor="let product of products; let i = index">
         <mat-list role="list">
             <mat-list-item role="listitem">Title: {{ product.data.title }}</mat-list-item>

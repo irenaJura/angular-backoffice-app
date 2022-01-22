@@ -17,6 +17,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule, Routes } from '@angular/router';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 const routes: Routes = [
@@ -29,7 +30,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     AddProductComponent,
-    ProductsListComponent
+    ProductsListComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
