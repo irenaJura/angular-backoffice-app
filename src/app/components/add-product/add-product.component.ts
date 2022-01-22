@@ -2,6 +2,7 @@ import { Product } from './../../classes/product';
 import { ProductService } from './../../services/product.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-product',
@@ -9,20 +10,12 @@ import { FormBuilder, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./add-product.component.css']
 })
 export class AddProductComponent implements OnInit {
-  product = {
-    id: 0,
-    title: '',
-    description: '',
-    price: 0,
-    category: '',
-    employee: '',
-    reviews: []
-  };
   submitted = false;
 
   constructor(
     private productService: ProductService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -48,6 +41,9 @@ export class AddProductComponent implements OnInit {
         error => {
           console.log(error);
         });
+    setTimeout(() => {
+      this.router.navigate(['/list']);
+    }, 500)
   }
 
 }

@@ -19,3 +19,7 @@ mat-grid-tile {
     bottom: 30px;
     right: 30px;
 }
+
+.delete-btn {
+    float: right;
+}

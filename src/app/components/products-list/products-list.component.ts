@@ -40,12 +40,25 @@ export class ProductsListComponent implements OnInit {
       .subscribe(
         data => {
           this.products = data;
-          console.log(this.products);
+          console.log("got products", this.products);
         },
         error => {
           console.log(error);
         }
       )
+  }
+
+  deleteProduct(id: number): void {
+    window.alert("Are you sure you want to delete this product?")
+    this.productService.deleteProduct(id)
+      .subscribe(
+        response => {
+          console.log("delete", response);
+          this.getProducts();
+        },
+        error => {
+          console.log(error);
+        });
   }
 
   toggleReviews(id: number) {
