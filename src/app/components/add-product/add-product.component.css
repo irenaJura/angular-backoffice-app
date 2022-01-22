@@ -5,10 +5,22 @@ h1 {
 
 .card {
     margin-top: 40px;
-    width: 70%;
+    width: 50%;
     margin: 0 auto;
 }
 
 mat-form-field {
     width: 100%;
+}
+
+@media screen and (max-width: 950px){
+    .card {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .card {
+        width: 90%;
+    }
 }

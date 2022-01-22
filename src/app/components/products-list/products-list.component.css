@@ -4,22 +4,37 @@ h1 {
     margin-bottom: 40px;
 }
 
-mat-grid-list {
-    width: 70%;
-    margin: 0 auto;
+.container {
+    flex-basis: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-mat-grid-tile {
-    background: rgb(243, 240, 240);
-    border: 1px solid grey;
+mat-card {
+    width: 40%;
+    height: auto;
+    margin: 10px;
 }
 
 .button-container {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    top: 30px;
+    left: 30px;
 }
 
 .delete-btn {
     float: right;
+}
+
+@media screen and (max-width: 950px){
+    mat-card {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 500px){
+    mat-card {
+        width: 90%;
+    }
 }
