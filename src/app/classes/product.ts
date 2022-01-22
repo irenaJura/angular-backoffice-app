@@ -6,5 +6,6 @@ export interface Product {
         price: number;
         category: string;
         employee: string;
+        reviews: Array<string>;
     }
 }

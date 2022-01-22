@@ -50,5 +50,4 @@ export class ProductsListComponent implements OnInit {
     this.breakpoint = (event.target.innerWidth <= 800) ? 1 : 2;
   }
 
-
 }

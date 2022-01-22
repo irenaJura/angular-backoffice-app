@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
     HttpClientModule,
     NoopAnimationsModule,
     MatListModule,
-    MatGridListModule
+    MatGridListModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

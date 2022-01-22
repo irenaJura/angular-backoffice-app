@@ -1,14 +1,20 @@
 <h1>{{title}}</h1>
 
-<mat-grid-list cols="3" rowHeight="1:1" gutterSize="40px" *ngIf="products" [cols]="breakpoint"
+<mat-grid-list cols="3" rowHeight="1:2" gutterSize="40px" *ngIf="products" [cols]="breakpoint"
     (window:resize)="onResize($event)">
     <mat-grid-tile *ngFor="let product of products">
-        <mat-list role="list">
-            <mat-list-item role="listitem">{{ product.data.title }}</mat-list-item>
-            <mat-list-item role="listitem"> {{ product.data.description }}</mat-list-item>
-            <mat-list-item role="listitem">{{ product.data.price }}</mat-list-item>
-            <mat-list-item role="listitem">{{ product.data.category }}</mat-list-item>
-            <mat-list-item role="listitem">{{ product.data.employee }}</mat-list-item>
-        </mat-list>
+        <mat-card>
+            <mat-list role="list">
+                <mat-list-item role="listitem">Title: {{ product.data.title }}</mat-list-item>
+                <mat-list-item role="listitem">Description: {{ product.data.description }}</mat-list-item>
+                <mat-list-item role="listitem">Price: {{ product.data.price }}</mat-list-item>
+                <mat-list-item role="listitem">Category: {{ product.data.category }}</mat-list-item>
+                <mat-list-item role="listitem">Employee: {{ product.data.employee }}</mat-list-item>
+                <mat-list-item>Reviews:</mat-list-item>
+                <div *ngFor="let review of product.data.reviews">
+                    <mat-list-item role="listitem">{{ review }}</mat-list-item>
+                </div>
+            </mat-list>
+        </mat-card>
     </mat-grid-tile>
 </mat-grid-list>
