@@ -1,8 +1,10 @@
 export interface Product {
-    id: number;
-    title: string;
-    description: string;
-    price: number;
-    category: string;
-    employee: string;
+    data: {
+        id: number;
+        title: string;
+        description: string;
+        price: number;
+        category: string;
+        employee: string;
+    }
 }
