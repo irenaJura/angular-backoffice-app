@@ -11,12 +11,14 @@ export class ProductsListComponent implements OnInit {
 
   products: Product[] = [];
   title = '';
+  breakpoint = 1;
 
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
     this.getStore();
     this.getProducts();
+    this.breakpoint = (window.innerWidth <= 1000) ? 2 : 3;
   }
 
   getStore(): void {
@@ -42,6 +44,10 @@ export class ProductsListComponent implements OnInit {
           console.log(error);
         }
       )
+  }
+
+  onResize(event: any) {
+    this.breakpoint = (event.target.innerWidth <= 800) ? 1 : 2;
   }
 
 

@@ -6,6 +6,10 @@ import { AddProductComponent } from './components/add-product/add-product.compon
 import { ProductsListComponent } from './components/products-list/products-list.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatListModule } from '@angular/material/list';
+import { MatGridListModule } from '@angular/material/grid-list';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +20,10 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NoopAnimationsModule,
+    MatListModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
