@@ -1,10 +1,10 @@
 .navbar-nav {
     height: 50px;
     width: 100%;
-    background: grey;
-    color: wheat;
+    background: #6cbab7;
+    color: #fafbfb;
+    font-weight: 500;
     display: flex;
-    justify-items: center;
     align-items: center;
     padding-left: 20px;
     text-align: center;

@@ -6,27 +6,29 @@
 
 <div class="container" *ngIf="products">
     <mat-card *ngFor="let product of products; let i = index" [ngClass]="{'panel': changeToPanel === true}">
-        <mat-list role="list">
-            <mat-list-item role="listitem">Title: {{ product.data.title }}</mat-list-item>
-            <mat-list-item role="listitem">Description: {{ product.data.description }}</mat-list-item>
-            <mat-list-item role="listitem">Price: {{ product.data.price }}</mat-list-item>
-            <mat-list-item role="listitem">Category: {{ product.data.category }}</mat-list-item>
-            <mat-list-item role="listitem">Employee: {{ product.data.employee }}</mat-list-item>
-            <mat-list-item *ngIf="product.data.reviews?.length">
+        <mat-card-title role="listitem">Title: {{ product.data.title }}</mat-card-title>
+        <mat-card-subtitle role="listitem">Category: {{ product.data.category }}</mat-card-subtitle>
+        <mat-card-content>
+            <p role="listitem">Description: {{ product.data.description }}</p>
+            <p role="listitem">Price: {{ product.data.price }}</p>
+            <p role="listitem">Employee: {{ product.data.employee }}</p>
+            <p *ngIf="product.data.reviews?.length">
                 <button mat-stroked-button color="accent" (click)="toggleReviews(i)">{{visibleIndex === i ? 'Hide
                     Reviews' :
                     'Show Reviews'}}</button>
-            </mat-list-item>
+            </p>
             <div class="reviews" *ngIf="visibleIndex === i">
                 <div *ngFor="let review of product.data.reviews">
-                    <mat-list-item role="listitem">{{ review }}</mat-list-item>
+                    <p role="listitem">{{ review }}</p>
                 </div>
             </div>
-            <button mat-fab color="warn" (click)="deleteProduct(product.id)" class="delete-btn"
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-fab color="accent" (click)="deleteProduct(product.id)" class="delete-btn"
                 aria-label="delete product">
                 <mat-icon>delete</mat-icon>
             </button>
-        </mat-list>
+        </mat-card-actions>
     </mat-card>
 </div>
 
