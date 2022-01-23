@@ -13,6 +13,10 @@ mat-form-field {
     width: 100%;
 }
 
+.reviews {   
+    margin-bottom: 10px;
+}
+
 @media screen and (max-width: 950px){
     .card {
         width: 80%;

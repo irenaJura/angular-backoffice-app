@@ -1,7 +1,7 @@
 import { Product } from './../../classes/product';
 import { ProductService } from './../../services/product.service';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -22,17 +22,30 @@ export class AddProductComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
   productForm = this.fb.group({
     title: new FormControl('', Validators.required),
     description: new FormControl('', Validators.required),
     price: new FormControl(0, Validators.required),
     category: new FormControl('', Validators.required),
-    employee: new FormControl('', Validators.required)
+    employee: new FormControl('', Validators.required),
+    reviews: this.fb.array([
+      this.fb.control('')
+    ])
   })
+
+  get reviews() {
+    return this.productForm.get('reviews') as FormArray;
+  }
+
+  addReview() {
+    this.reviews.push(this.fb.control(''));
+  }
 
   onSubmit(): void {
     const data = this.productForm.value;
 
+    console.log("submitted data", data);
     this.productService.addProduct(data)
       .subscribe(
         response => {

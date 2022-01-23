@@ -10,7 +10,7 @@
             <mat-list-item role="listitem">Price: {{ product.data.price }}</mat-list-item>
             <mat-list-item role="listitem">Category: {{ product.data.category }}</mat-list-item>
             <mat-list-item role="listitem">Employee: {{ product.data.employee }}</mat-list-item>
-            <mat-list-item>
+            <mat-list-item *ngIf="product.data.reviews?.length">
                 <button mat-stroked-button color="accent" (click)="toggleReviews(i)">{{visibleIndex === i ? 'Hide
                     Reviews' :
                     'Show Reviews'}}</button>

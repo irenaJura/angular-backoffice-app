@@ -25,7 +25,9 @@ mat-card {
 }
 
 .delete-btn {
-    float: right;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
 }
 
 @media screen and (max-width: 950px){

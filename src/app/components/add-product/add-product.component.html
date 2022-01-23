@@ -24,7 +24,18 @@
             <mat-label>Employee</mat-label>
             <input matInput id="employee" type="text" formControlName="employee">
         </mat-form-field>
+        <div formArrayName="reviews" class="reviews">
+            <div *ngFor="let review of reviews.controls; let i=index">
+                <mat-form-field appearance="fill">
+                    <mat-label>Review:</mat-label>
+                    <input matInput id="review-{{ i }}" type="text" [formControlName]="i">
+                </mat-form-field>
+            </div>
+            <button mat-raised-button color="accent" (click)="addReview()" type="button">Add another review</button>
+        </div>
         <p>Complete the form to enable button.</p>
         <button mat-raised-button color="primary" type="submit" [disabled]="!productForm.valid">Submit</button>
     </form>
 </mat-card>
+
+{{productForm.value | json}}

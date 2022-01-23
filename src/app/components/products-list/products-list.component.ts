@@ -11,7 +11,6 @@ export class ProductsListComponent implements OnInit {
 
   products: Product[] = [];
   title = '';
-  breakpoint = 1;
   visible = false;
   visibleIndex = -1;
 
@@ -20,7 +19,6 @@ export class ProductsListComponent implements OnInit {
   ngOnInit(): void {
     this.getStore();
     this.getProducts();
-    this.breakpoint = (window.innerWidth <= 1000) ? 2 : 3;
   }
 
   getStore(): void {
@@ -49,7 +47,7 @@ export class ProductsListComponent implements OnInit {
   }
 
   deleteProduct(id: number): void {
-    window.alert("Are you sure you want to delete this product?")
+    window.confirm("Are you sure you want to delete this product?")
     this.productService.deleteProduct(id)
       .subscribe(
         response => {
@@ -67,10 +65,6 @@ export class ProductsListComponent implements OnInit {
     } else {
       this.visibleIndex = id;
     }
-  }
-
-  onResize(event: any) {
-    this.breakpoint = (event.target.innerWidth <= 800) ? 1 : 2;
   }
 
 }
