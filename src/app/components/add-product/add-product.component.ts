@@ -1,7 +1,7 @@
 import { Product } from './../../classes/product';
 import { ProductService } from './../../services/product.service';
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -22,16 +22,13 @@ export class AddProductComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
   productForm = this.fb.group({
     title: new FormControl('', Validators.required),
     description: new FormControl('', Validators.required),
     price: new FormControl(0, Validators.required),
     category: new FormControl('', Validators.required),
     employee: new FormControl('', Validators.required),
-    reviews: this.fb.array([
-      this.fb.control('')
-    ])
+    reviews: this.fb.array([this.fb.control('', Validators.required)])
   })
 
   get reviews() {
@@ -39,7 +36,11 @@ export class AddProductComponent implements OnInit {
   }
 
   addReview() {
-    this.reviews.push(this.fb.control(''));
+    this.reviews.push(this.fb.control('', Validators.required));
+  }
+
+  removeReview(i: number) {
+    this.reviews.removeAt(i);
   }
 
   onSubmit(): void {

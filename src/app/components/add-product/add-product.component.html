@@ -30,12 +30,15 @@
                     <mat-label>Review:</mat-label>
                     <input matInput id="review-{{ i }}" type="text" [formControlName]="i">
                 </mat-form-field>
+                <div class="btn-container">
+                    <button mat-raised-button color="accent" (click)="addReview()" type="button">Add another
+                        review</button>
+                    <button mat-raised-button color="warn" (click)="removeReview(i)" type="button">Remove
+                        review</button>
+                </div>
             </div>
-            <button mat-raised-button color="accent" (click)="addReview()" type="button">Add another review</button>
         </div>
         <p>Complete the form to enable button.</p>
         <button mat-raised-button color="primary" type="submit" [disabled]="!productForm.valid">Submit</button>
     </form>
 </mat-card>
-
-{{productForm.value | json}}

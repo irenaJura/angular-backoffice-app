@@ -47,16 +47,17 @@ export class ProductsListComponent implements OnInit {
   }
 
   deleteProduct(id: number): void {
-    window.confirm("Are you sure you want to delete this product?")
-    this.productService.deleteProduct(id)
-      .subscribe(
-        response => {
-          console.log("delete", response);
-          this.getProducts();
-        },
-        error => {
-          console.log(error);
-        });
+    window.confirm("Are you sure you want to delete this product?") ?
+      this.productService.deleteProduct(id)
+        .subscribe(
+          response => {
+            console.log("delete", response);
+            this.getProducts();
+          },
+          error => {
+            console.log(error);
+          }) :
+      null;
   }
 
   toggleReviews(id: number) {
