@@ -56,6 +56,9 @@ export class AddProductComponent implements OnInit {
         error => {
           console.log(error);
         });
+
+    this.productForm.reset();
+
     setTimeout(() => {
       this.router.navigate(['/list']);
     }, 500)
