@@ -11,6 +11,16 @@ h1 {
     justify-content: center;
 }
 
+.panel {
+    width: 80%;
+}
+
+.layout-btn {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+}
+
 mat-card {
     width: 40%;
     height: auto;

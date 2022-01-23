@@ -13,6 +13,7 @@ export class ProductsListComponent implements OnInit {
   title = '';
   visible = false;
   visibleIndex = -1;
+  changeToPanel = false;
 
   constructor(private productService: ProductService) { }
 
@@ -66,6 +67,10 @@ export class ProductsListComponent implements OnInit {
     } else {
       this.visibleIndex = id;
     }
+  }
+
+  changeLayout() {
+    this.changeToPanel = !this.changeToPanel;
   }
 
 }

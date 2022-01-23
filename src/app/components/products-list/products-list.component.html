@@ -1,9 +1,11 @@
 <app-navbar></app-navbar>
 
+<button mat-raised-button color="accent" (click)="changeLayout()" class="layout-btn">Change layout</button>
+
 <h1 *ngIf="title">{{title}}</h1>
 
 <div class="container" *ngIf="products">
-    <mat-card *ngFor="let product of products; let i = index">
+    <mat-card *ngFor="let product of products; let i = index" [ngClass]="{'panel': changeToPanel === true}">
         <mat-list role="list">
             <mat-list-item role="listitem">Title: {{ product.data.title }}</mat-list-item>
             <mat-list-item role="listitem">Description: {{ product.data.description }}</mat-list-item>
