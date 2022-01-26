@@ -18,12 +18,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ChartComponent } from './components/chart/chart.component';
+import { NgChartsModule } from 'ng2-charts';
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/list', pathMatch: 'full' },
   { path: 'list', component: ProductsListComponent },
   { path: 'add', component: AddProductComponent },
+  { path: 'chart', component: ChartComponent },
 ]
 
 @NgModule({
@@ -31,7 +34,8 @@ const routes: Routes = [
     AppComponent,
     AddProductComponent,
     ProductsListComponent,
-    NavbarComponent
+    NavbarComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +51,7 @@ const routes: Routes = [
     MatTooltipModule,
     MatFormFieldModule,
     MatInputModule,
+    NgChartsModule,
     AppRoutingModule,
     RouterModule.forRoot(routes)
   ],

@@ -52,6 +52,14 @@ export class ProductService {
       );
   }
 
+  getCategories(): Observable<any> {
+    return this.http.get(`${baseUrl}/stats/categories`)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      );
+  }
+
   handleError(error: any) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
